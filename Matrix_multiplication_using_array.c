@@ -1,10 +1,18 @@
+/*MATRIX MULTIPLICATION USING ARRAY*/
+
 #include<stdio.h>
 int main(){
+  printf("Matrix_A row and column\n");
   int row,column;
   printf("Enter a row and column:");
   scanf("%d%d",&row,&column);
+  printf("Matrix_B row and column\n");
+  int row1,column1;
+  printf("Enter a row and column:");
+  scanf("%d%d",&row1,&column1);
   int matrix_A[row][column],matrix_B[row][column];
-  printf("matrix_A:\n");
+  if(column==row1){
+ printf("matrix_A:\n");
   
   for(int i=0;i<row;i++){
     for(int j=0;j<column;j++){
@@ -13,14 +21,14 @@ int main(){
     }
   }
   printf("matrix_B:\n");
-  for(int i=0;i<row;i++){
-    for(int j=0;j<column;j++){
+  for(int i=0;i<row1;i++){
+    for(int j=0;j<column1;j++){
       printf("matrix_B[%d][%d]:",i,j);
       scanf("%d",&matrix_B[i][j]);
     }
   }
   printf("multiplication of matrix_A and matrix_B:\n");
-  for(int i=0;i<row;i++){
+  for(int i=0;i<row1;i++){
     for(int j=0;j<column;j++){
       int sum=0;
   for(int k=0;k<column;k++){
@@ -30,4 +38,9 @@ int main(){
     }
     printf("\n");
   }
+  }
+  else{
+  printf("Multiplication of two matrix not possible");
+  }
+  return 0;
 }
